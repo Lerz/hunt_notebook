@@ -1,10 +1,10 @@
-# 🧪 SPLUNK HUNT COOKBOOK – Fuite de données / Exfiltration
+# SPLUNK HUNT Cheatsheet – Fuite de données / Exfiltration
 
 Ce document contient une série de requêtes SPL utiles pour détecter des scénarios courants de fuite ou exfiltration de données.
 
 ---
 
-## 📦 1. Top IP par volume sortant (détection brute)
+## 1. Top IP par volume sortant (détection brute)
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -16,7 +16,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🌐 2. Requêtes vers des services de partage de fichiers (cloud / dropzone)
+## 2. Requêtes vers des services de partage de fichiers (cloud / dropzone)
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -28,7 +28,7 @@ url_domain IN ("dropbox.com", "gofile.io", "wetransfer.com", "mega.nz", "anonfil
 
 ---
 
-## 🕵️ 3. DNS tunneling (requêtes longues ou nombreuses)
+## 3. DNS tunneling (requêtes longues ou nombreuses)
 
 ```spl
 index=dns sourcetype=*dns*
@@ -41,7 +41,7 @@ index=dns sourcetype=*dns*
 
 ---
 
-## 🔗 4. Multi-destinations (scan, beacon, exfil)
+## 4. Multi-destinations (scan, beacon, exfil)
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -52,7 +52,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🌍 5. Volume réseau par TLD
+## 5. Volume réseau par TLD
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -64,7 +64,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🕒 6. Analyse temporelle (volume par heure)
+## 6. Analyse temporelle (volume par heure)
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -76,7 +76,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🧑‍💻 7. Mapping IP → Utilisateur
+## 7. Mapping IP → Utilisateur
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -88,7 +88,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🧠 8. Pattern répétitif (fréquence + volume)
+## 8. Pattern répétitif (fréquence + volume)
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -97,7 +97,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🔓 9. Exfiltration vers ports non standards
+## 9. Exfiltration vers ports non standards
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -109,7 +109,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 🚨 10. Utilisation de VPN ou TOR (enrichissement requis)
+## 10. Utilisation de VPN ou TOR (enrichissement requis)
 
 ```spl
 index=stormshield sourcetype=stormshield* action=accept
@@ -121,7 +121,7 @@ index=stormshield sourcetype=stormshield* action=accept
 
 ---
 
-## 💡 Tips
+## Tips
 
 - Utilise `| lookup` avec enrichissement pour `user`, `host`, `IOC`, `majestic_million`
 - Trie toujours par `bytes_out` ou `volume` pour prioriser

@@ -1,11 +1,10 @@
-
-# 🧪 DuckDB Cookbook – Hunt réseau & exfiltration (Splunk exports)
+# DuckDB Cheatsheet – Hunt réseau & exfiltration
 
 Ce fichier est une collection de requêtes SQL optimisées pour analyser un export CSV Splunk (`stormshield_logs.csv`) avec **DuckDB**.
 
 ---
 
-## 📁 Préparation (dans Python ou CLI)
+## Préparation (dans Python ou CLI)
 
 ```python
 import duckdb
@@ -18,7 +17,7 @@ duckdb.query("""
 
 ---
 
-## 🔎 1. Top IP par volume total
+## 1. Top IP par volume total
 
 ```sql
 SELECT src_ip,
@@ -32,7 +31,7 @@ LIMIT 20;
 
 ---
 
-## 🌍 2. IP interne vs externe (simplifiée)
+## 2. IP interne vs externe (simplifiée)
 
 ```sql
 SELECT src_ip,
@@ -48,7 +47,7 @@ ORDER BY total_Mo DESC;
 
 ---
 
-## 🌐 3. Services cloud les plus utilisés (domaines suspects)
+## 3. Services cloud les plus utilisés (domaines suspects)
 
 ```sql
 SELECT url_domain,
@@ -62,7 +61,7 @@ ORDER BY total_Mo DESC;
 
 ---
 
-## 🕒 4. Volume horaire (par heure UTC)
+## 4. Volume horaire (par heure UTC)
 
 ```sql
 SELECT DATE_TRUNC('hour', _time) AS heure,
@@ -74,7 +73,7 @@ ORDER BY heure ASC;
 
 ---
 
-## 🔁 5. Connexions vers plusieurs destinations uniques
+## 5. Connexions vers plusieurs destinations uniques
 
 ```sql
 SELECT src_ip,
@@ -88,7 +87,7 @@ ORDER BY nb_destinations DESC;
 
 ---
 
-## 🧪 6. Suspicion de contournement (accès VPN / TOR)
+## 6. Suspicion de contournement (accès VPN / TOR)
 
 ```sql
 SELECT src_ip, url_domain, COUNT(*) AS tentatives
@@ -100,7 +99,7 @@ ORDER BY tentatives DESC;
 
 ---
 
-## 🔐 7. Ports de destination suspects
+## 7. Ports de destination suspects
 
 ```sql
 SELECT dest_port,
@@ -114,7 +113,7 @@ ORDER BY total_Mo DESC;
 
 ---
 
-## 📊 8. TOP utilisateurs (si enrichissement user présent)
+## 8. TOP utilisateurs (si enrichissement user présent)
 
 ```sql
 SELECT user,
@@ -127,7 +126,7 @@ ORDER BY total_Mo DESC;
 
 ---
 
-## 📎 Bonus : Export vers fichier parquet
+## Bonus : Export vers fichier parquet
 
 ```sql
 COPY (
@@ -139,5 +138,5 @@ COPY (
 
 ---
 
-💡 **Astuce** : DuckDB peut aussi lire des fichiers parquet, JSON, SQLite, ou pandas DataFrames directement.
+**Astuce** : DuckDB peut aussi lire des fichiers parquet, JSON, SQLite, ou pandas DataFrames directement.
 
