@@ -10,7 +10,7 @@ Pré-requis :
 - pyyaml
 - html5lib
 - lxml
-- epub
+- ebooklib
 """
 
 import os

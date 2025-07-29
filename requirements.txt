@@ -50,9 +50,7 @@ beautifulsoup4
 lxml
 html5lib
 pdfplumber
-epub
-shelve
-hashlib
+ebooklib
 
 # Report generation
 jinja2
