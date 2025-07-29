@@ -140,6 +140,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+a_hunt_venv_py310/
 ENV/
 env.bak/
 venv.bak/
@@ -205,3 +206,27 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Hunt-lab exclusions with NOTICE allowlist
+
+# Raw data / cache
+data/*
+!data/NOTICE.md
+
+datasets/*
+!datasets/NOTICE.md
+
+output/*
+!output/NOTICE.md
+
+models/*
+!models/NOTICE.md
+
+knowledge_base/*
+!knowledge_base/NOTICE.md
+
+packages/*
+!packages/NOTICE.md
+
+vendors/*
+!vendors/NOTICE.md

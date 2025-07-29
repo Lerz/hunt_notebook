@@ -1,0 +1,65 @@
+# Jupyter environment
+jupyterlab
+notebook
+ipykernel
+jupyter-client
+jupyter-core
+jupyterlab_widgets
+ipywidgets
+
+# Data handling
+pandas
+numpy
+pyarrow
+openpyxl
+tqdm
+regex
+tabulate
+duckdb
+pandasql
+pyyaml
+jsonschema
+
+# Visualisation
+matplotlib
+seaborn
+plotly
+altair
+
+# Machine learning & detection
+scikit-learn
+umap-learn
+pyod
+
+# Enrichment / Security
+ipaddress
+splunk-sdk
+attackcti
+geoip2
+tldextract
+
+# LLM support
+transformers
+torch
+accelerate
+
+# RAG support
+faiss-cpu
+sentence_transformers
+beautifulsoup4
+lxml
+html5lib
+pdfplumber
+epub
+shelve
+hashlib
+
+# Report generation
+jinja2
+weasyprint
+
+# (Optionnel) performance JSON
+orjson
+
+# (Optionnel) unit tests
+pytest
