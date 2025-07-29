@@ -45,6 +45,7 @@ hunt/
 
 Cet environnement est conçu pour être **entièrement fonctionnel sans connexion internet**. Toutes les dépendances nécessaires doivent être préalablement téléchargées depuis une machine connectée, puis transférées.
 Pour les dépendances non-libres ou volumineuses pour ce dépôt, se référer au TODO.md dans le repertoire.
+
 ---
 
 ### 1. **Se placer à la racine du projet**
@@ -99,6 +100,7 @@ jupyter lab
 
 Un serveur local s’ouvrira sur `http://localhost:8888`.
 Naviguez ensuite dans le dossier `notebooks/` pour lancer vos analyses.
+
 ---
 
 ### 5. **(Optionnel) Regénérer le cache pour les modèles LLM**
