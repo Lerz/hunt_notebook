@@ -230,3 +230,6 @@ packages/*
 
 vendors/*
 !vendors/NOTICE.md
+
+processed_docs/
+cache/
